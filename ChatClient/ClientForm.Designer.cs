@@ -43,6 +43,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbIPAdress = new System.Windows.Forms.TextBox();
             this.tbMessageContent = new System.Windows.Forms.RichTextBox();
+            this.lbAttachedFiles = new System.Windows.Forms.ListBox();
+            this.dlgLoadFile = new System.Windows.Forms.OpenFileDialog();
+            this.btAttachFile = new System.Windows.Forms.Button();
+            this.btDeleteFile = new System.Windows.Forms.Button();
+            this.btShowLoadedFiles = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblPassword
@@ -180,11 +185,60 @@
             this.tbMessageContent.TabIndex = 52;
             this.tbMessageContent.Text = "";
             // 
+            // lbAttachedFiles
+            // 
+            this.lbAttachedFiles.FormattingEnabled = true;
+            this.lbAttachedFiles.ItemHeight = 16;
+            this.lbAttachedFiles.Location = new System.Drawing.Point(149, 410);
+            this.lbAttachedFiles.Name = "lbAttachedFiles";
+            this.lbAttachedFiles.Size = new System.Drawing.Size(308, 116);
+            this.lbAttachedFiles.TabIndex = 67;
+            this.lbAttachedFiles.SelectedIndexChanged += new System.EventHandler(this.lbAttachedFiles_SelectedIndexChanged);
+            // 
+            // dlgLoadFile
+            // 
+            this.dlgLoadFile.FileName = "openFileDialog1";
+            // 
+            // btAttachFile
+            // 
+            this.btAttachFile.Location = new System.Drawing.Point(33, 410);
+            this.btAttachFile.Name = "btAttachFile";
+            this.btAttachFile.Size = new System.Drawing.Size(87, 43);
+            this.btAttachFile.TabIndex = 68;
+            this.btAttachFile.Text = "Attach file";
+            this.btAttachFile.UseVisualStyleBackColor = true;
+            this.btAttachFile.Click += new System.EventHandler(this.btAttachFile_Click);
+            // 
+            // btDeleteFile
+            // 
+            this.btDeleteFile.Location = new System.Drawing.Point(34, 486);
+            this.btDeleteFile.Name = "btDeleteFile";
+            this.btDeleteFile.Size = new System.Drawing.Size(86, 40);
+            this.btDeleteFile.TabIndex = 69;
+            this.btDeleteFile.Text = "Delete file";
+            this.btDeleteFile.UseVisualStyleBackColor = true;
+            this.btDeleteFile.Click += new System.EventHandler(this.btDeleteFile_Click);
+            // 
+            // btShowLoadedFiles
+            // 
+            this.btShowLoadedFiles.Enabled = false;
+            this.btShowLoadedFiles.Location = new System.Drawing.Point(465, 432);
+            this.btShowLoadedFiles.Name = "btShowLoadedFiles";
+            this.btShowLoadedFiles.Size = new System.Drawing.Size(86, 74);
+            this.btShowLoadedFiles.TabIndex = 70;
+            this.btShowLoadedFiles.Text = "Показать файлы диалога";
+            this.btShowLoadedFiles.UseVisualStyleBackColor = true;
+            this.btShowLoadedFiles.Click += new System.EventHandler(this.btShowLoadedFiles_Click);
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 551);
+            this.Controls.Add(this.btShowLoadedFiles);
+            this.Controls.Add(this.btDeleteFile);
+            this.Controls.Add(this.btAttachFile);
+            this.Controls.Add(this.lbAttachedFiles);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.lblName);
@@ -225,6 +279,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbIPAdress;
         private System.Windows.Forms.RichTextBox tbMessageContent;
+        private System.Windows.Forms.ListBox lbAttachedFiles;
+        private System.Windows.Forms.OpenFileDialog dlgLoadFile;
+        private System.Windows.Forms.Button btAttachFile;
+        private System.Windows.Forms.Button btDeleteFile;
+        private System.Windows.Forms.Button btShowLoadedFiles;
     }
 }
 

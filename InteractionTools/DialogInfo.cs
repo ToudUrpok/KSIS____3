@@ -14,6 +14,7 @@ namespace InteractionTools
         public int Id;
         public List<ChatMessage> MessagesHistory;
         public int UnreadMessCount;
+        public List<int> LoadedFiles;
 
         public DialogInfo(string name, int id)
         {
@@ -22,6 +23,7 @@ namespace InteractionTools
             MessagesHistory = new List<ChatMessage>();
             UnreadMessCount = 0;
             Id = id;
+            LoadedFiles = new List<int>();
         }
 
         public object Clone()
@@ -31,6 +33,10 @@ namespace InteractionTools
             foreach (ChatMessage message in this.MessagesHistory)
             {
                 dialog.MessagesHistory.Add((ChatMessage)message.Clone());
+            }
+            foreach (int fileID in LoadedFiles)
+            {
+                dialog.LoadedFiles.Add(fileID);
             }
             return dialog;
         }

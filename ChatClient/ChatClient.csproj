@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,10 +56,26 @@
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CommunityData.cs" />
+    <Compile Include="FileSizeException.cs" />
+    <Compile Include="FilesService.cs" />
+    <Compile Include="FilesViewingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilesViewingForm.Designer.cs">
+      <DependentUpon>FilesViewingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HTTPClientService.cs" />
+    <Compile Include="InvalidZippedFileExtentionException.cs" />
+    <Compile Include="MatchingFiles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceInformation.cs" />
+    <Compile Include="TotalFilesSizeException.cs" />
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilesViewingForm.resx">
+      <DependentUpon>FilesViewingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

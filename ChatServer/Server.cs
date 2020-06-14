@@ -80,6 +80,8 @@ namespace ChatServer
                     DialogInfoMethods.AddMessage(CommonDialog.MessagesHistory,
                         ref CommonDialog.UnreadMessCount,
                         new ChatMessage(message.SenderID, message.SenderName, message.IP + "  " + message.content, DateTime.Now));
+                    if (message.AttachedFiles != null)
+                        CommonDialog.LoadedFiles.AddRange(message.AttachedFiles);
                     break;
                 case MessageType.UDPRequest:
                     Console.WriteLine("request");
@@ -108,6 +110,11 @@ namespace ChatServer
                         DialogInfoMethods.AddMessage(Clients[receiverId].Dialogs[message.SenderID].MessagesHistory,
                             ref Clients[receiverId].Dialogs[message.SenderID].UnreadMessCount,
                             new ChatMessage(message.SenderID, message.SenderName, message.content, DateTime.Now));
+                        if (message.AttachedFiles != null)
+                        {
+                            Clients[message.SenderID].Dialogs[receiverId].LoadedFiles.AddRange(message.AttachedFiles);
+                            Clients[receiverId].Dialogs[message.SenderID].LoadedFiles.AddRange(message.AttachedFiles);
+                        }
                     }
                     break;
                 case MessageType.DialogData:

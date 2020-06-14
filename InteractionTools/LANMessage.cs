@@ -18,6 +18,7 @@ namespace InteractionTools
         public string IP;
         public string content;
         public List<DialogInfo> Dialogs;
+        public List<int> AttachedFiles;
         public LANMessage(MessageType messType, int senderId, int receiverId, string ip, string cont)
         {
             messageType = messType;
